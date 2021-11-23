@@ -1,0 +1,18 @@
+#btn {
+    background-color: #3f89b9;
+    color: rgb(247, 252, 251);
+    margin-bottom: 20px;
+   
+}
+
+.left-column {
+    background: linear-gradient(to bottom, #c2dfe9 3%, #64aed8 100%)
+}
+.top-column {
+    border-bottom: solid #111;
+}
+
+.single {
+    background-color: rgba(17, 37, 68, 0.664);
+    color: white;
+}
