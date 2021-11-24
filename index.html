@@ -18,31 +18,30 @@
         <div class="left-column col-12 col-lg-3 sticky-top d-flex flex-column">
             <h5 class="m-1">Search for a City</h5>
             <div class="top-column ml-md-auto w-100 w-md-auto m-1">
-                <input class="rounded btn-block btn-add"></input>
+                <input class="rounded btn-block btn-add form-input" name="cityname" id="cityname" type="text" autofocus="true"></input>
                 <button id="btn" class="rounded btn-block btn-add">Search</button>
             </div>
         </div>
 
         <div class="col-12 col-lg-9 d-flex flex-column">
             <div class="card border-dark m-3" style="width: 100%;">
-                <div class="card-body">
-                    <h5 class="card-title">Name of a City here</h5>
-                    <h7 class="mb-2 text-muted">temp</h7>
+                <div id="weather-container" class="card-body weather-content">
                 </div>
             </div>
             <h6 class="m-4">5-Day Forecast</h6>
             <div class="container">
-                <div class="row row-cols-5">
-                  <div class="single col border border-dark rounded mx-3">Column</div>
-                  <div class="single col border border-dark rounded mx-3">Column</div>
-                  <div class="single col border border-dark rounded mx-3">Column</div>
-                  <div class="single col border border-dark rounded mx-3">Column</div>
-                  <div class="single col border border-dark rounded mx-3">Column</div>
+                <div class="row row-cols-5 d-flex">
+                  <div class="single col border border-dark rounded mx-3 justify-content-around">Column</div>
+                  <div class="single col border border-dark rounded mx-3 justify-content-around">Column</div>
+                  <div class="single col border border-dark rounded mx-3 justify-content-around">Column</div>
+                  <div class="single col border border-dark rounded mx-3 justify-content-around">Column</div>
+                  <div class="single col border border-dark rounded mx-3 justify-content-around">Column</div>
                 </div>
               </div>
 
         </div>
     </main>
+    <script src="./assets/js/script.js"></script>
 
 </body>
 
