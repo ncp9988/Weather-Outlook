@@ -6,10 +6,9 @@ var saveCity = document.querySelector("#save-city")
 
 
 
-
 var getCityWeather = function (city) {
     //format OpenWeather One Call API
-    var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=b76284fed56f40aa553158bccc226955";
+    var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=b76284fed56f40aa553158bccc226955&units=imperial";
     console.log(apiUrl)
 
     // make a get request to url
@@ -20,7 +19,11 @@ var getCityWeather = function (city) {
                 console.log(response);
                 response.json().then(function (data) {
                     console.log(data);
-                    displayCity(data, city);
+                    weatherContainer.innerHTML= `<h3>City: ${city}</h3>
+                    <h6>Description:${data.weather[0].description}<span><img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /></span></h6>
+                    <p>Humidity:${data.main.humidity}</p>
+                    <p>Wind speed:${data.wind.speed}</p>
+                    `
                 });
             };
         })
