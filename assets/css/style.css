@@ -1,3 +1,14 @@
+
+body, html {
+    margin-left:1%;
+    margin-right:1%;
+    margin-bottom:1%;
+    margin-top:1%;
+    }
+header {
+    font-size:larger;
+}
+
 #btn {
     background-color: #3f89b9;
     color: rgb(247, 252, 251);
@@ -13,10 +24,11 @@
 }
 
 .single {
-    background-color: rgba(17, 37, 68, 0.664);
+    background-color: rgba(50, 65, 87, 0.664);
     color: white;
 }
-
-#1 {
-    color: black;
+.save-city {
+    background-color: rgb(175, 175, 173);
+    text-align: center;
 }
+

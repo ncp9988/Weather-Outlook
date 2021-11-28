@@ -22,10 +22,14 @@ var getCityWeather = function (city) {
                         var lat = data.coord.lat
                         var lon = data.coord.lon
                         forecast(lat, lon);
-                        weatherContainer.innerHTML = `<h3>City: ${city}</h3>
-                        <h6>Description:${data.weather[0].description}<span><img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /></span></h6>
-                        <p>Humidity:${data.main.humidity}</p>
-                        <p>Wind speed:${data.wind.speed}</p>
+                        weatherContainer.innerHTML = 
+                        `<h3> ${city} (Today)
+                        <span><img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" /></span>
+                        </h3>
+                        <p>Temp: ${data.main.temp}</p>
+                        <p>Humidity: ${data.main.humidity} %</p>
+                        <p>Wind: ${data.wind.speed} MPH</p>
+                        
                         `
                         previousSearch.push(city)
                         localStorage.setItem("WeatherDashboard", JSON.stringify(previousSearch))
@@ -72,6 +76,7 @@ var displayCity = function () {
 
             var titleEl = document.createElement("div");
             titleEl.textContent = citynameEl;
+            $(titleEl).addClass("save-city col border border-bg-secondary rounded my-3 justify-content-around")
 
             //append to container
             saveCity.appendChild(titleEl)
@@ -95,13 +100,15 @@ var displayCity = function () {
                         console.log(data);
                         var daily = data.daily
                         for (let i = 1; i <= 5; i++) {
-                            document.getElementById(`${i}`).innerHTML = `<div>
-                        <h3>Day ${i}</h3>
-                        <h4>Temp:${daily[i].temp.day}</h4>
-                        <h6>Description:${daily[i].weather[0].description}<span><img src="https://openweathermap.org/img/wn/${daily[i].weather[0].icon}@2x.png" /></span></h6>
-                    <p>Humidity:${daily[i].humidity}</p>
-                    <p>Wind speed:${daily[i].wind_speed}</p>
-                      </div>
+                            document.getElementById(`${i}`).innerHTML = 
+                            `<div>
+                            <h3>Day ${i}</h3>
+                            <span><img src="https://openweathermap.org/img/wn/${daily[i].weather[0].icon}@2x.png" /></span>
+                            <p>Temp: ${daily[i].temp.day}</p>
+                            <p>Humidity:${daily[i].humidity}</p>
+                            <p>Wind speed:${daily[i].wind_speed}</p>
+
+                            </div>
                         `
                         }
                     })
