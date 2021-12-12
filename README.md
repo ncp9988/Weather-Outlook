@@ -19,4 +19,4 @@ https://github.com/ncp9988/Weather-Outlook.git
 
 
 ### Screenshot
-![Screenshot](https://github.com/ncp9988/Weather-Outlook/blob/main/assets/Screen%20Shot%202021-11-28%20at%202.26.21%20PM.png)
+![Screenshot](https://github.com/ncp9988/Weather-Outlook/blob/main/assets/Screen%20Shot%202021-12-12%20at%201.20.07%20PM.png)
