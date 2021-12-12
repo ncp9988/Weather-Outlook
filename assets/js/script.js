@@ -28,12 +28,14 @@ var getCityWeather = function (city) {
                         </h3>
                         <p>Temp: ${data.main.temp}</p>
                         <p>Humidity: ${data.main.humidity} %</p>
-                        <p>Wind: ${data.wind.speed} MPH</p>
+                        <p>Wind: ${data.wind.speed} MPH</p>`
+
+                        if (previousSearch.indexOf(city) === -1){
                         
-                        `
                         previousSearch.push(city)
                         localStorage.setItem("WeatherDashboard", JSON.stringify(previousSearch))
                         displayCity()
+                        }
                     });
                 };
             })
@@ -46,8 +48,9 @@ var nameSumitHandler = function (event) {
 
         // clear content
         // weatherContainer.textContent = "";
-        cityInputEl = "";
-    } else {
+        cityInputEl.value = "";
+    } 
+    else {
         alert("Please enter a City");
     }
 }
@@ -72,14 +75,16 @@ var displayCity = function () {
         //loop over citys
         for (var i = 0; i < city.length; i++) {
             var citynameEl = city[i]
+            var containerDiv = document.createElement("div")
 
-
-            var titleEl = document.createElement("div");
+            var titleEl = document.createElement("button");
             titleEl.textContent = citynameEl;
             $(titleEl).addClass("save-city col border border-bg-secondary rounded my-3 justify-content-around")
-
+            titleEl.addEventListener("click", getPreviousSearchForecast)
+            titleEl.setAttribute("id",citynameEl)
             //append to container
-            saveCity.appendChild(titleEl)
+            containerDiv.appendChild(titleEl)
+            saveCity.appendChild(containerDiv)
 
         }
     }
@@ -107,6 +112,7 @@ var displayCity = function () {
                             <p>Temp: ${daily[i].temp.day}</p>
                             <p>Humidity:${daily[i].humidity}</p>
                             <p>Wind speed:${daily[i].wind_speed}</p>
+                            <p>UVI: ${daily[i].uvi}</p>
 
                             </div>
                         `
@@ -119,3 +125,9 @@ var displayCity = function () {
 
 
     displayCity()
+
+    function getPreviousSearchForecast(){
+        var city = this.getAttribute("id")
+        console.log(city)
+        getCityWeather(city)
+    }

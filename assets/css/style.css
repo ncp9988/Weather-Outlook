@@ -32,3 +32,8 @@ header {
     text-align: center;
 }
 
+input{
+    width:100%;
+    border-radius: 0ch;
+    margin: 1px;
+}
